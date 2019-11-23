@@ -1,0 +1,16 @@
+IS_ROBOT=no
+COLOR_PROMPT=yes
+export CATKIN_WS=/home/mirza/catkin_ws
+export CMAN_CONFIG_DIR=/opt/magazino/config
+export FZF_ENABLED=yes
+source /home/mirza/dotfiles/bash/bashrc_magazino
+export HALCONLICENSE=1
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export HALCONROOT=/opt/halcon
+source /home/mirza/h.sh
+alias hl='h "failed" "completed" "active" "Debug file written" "Video saved to" "Saving image to" "problem" "sensor_aggregator" "safety" "/var/tmp" "as toru-0" "Error report created"'
+alias vpn='sudo openvpn --config /usr/share/magazino-developer-config/vpn/magazino.ovpn'
+#source /home/mirza/.ohmybashrc
+alias less='hl | less'
+source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
