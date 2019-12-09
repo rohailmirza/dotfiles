@@ -103,9 +103,9 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 bindsym $mod+m [title="Spotify"] scratchpad show
 
-# floating windows 
-for_window [class="Gnome-calculator"] floating enable  
-for_window [class="Gnome-calendar"] floating enable  
+# floating windows
+for_window [class="Gnome-calculator"] floating enable
+for_window [class="Gnome-calendar"] floating enable
 
 
 # focus the parent container
@@ -293,9 +293,9 @@ bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 #exec_always feh --bg-scale /usr/share/backgrounds/wallpapers/serious/TORU_xray_front_twin.jpg
 exec_always feh --bg-scale ~/.wallpapers/new.png
 
-bindsym --release $mod+Print exec "scrot -u ~/Pictures/Screenshot-%Y-%m-%d-%H_%M_%S.png"
-bindsym --release $mod+Shift+Print exec "scrot -s ~/Pictures/Screenshot-%Y-%m-%d-%H_%M_%S.png"
-bindsym --release Print  exec "flameshot gui -p ~/Pictures/" 
+bindsym --release $mod+Print exec "scrot -u ~/Pictures/Screenshot-%Y-%m-%d-%H_%M_%S.png -e 'xclip -selection c -t image/png < $f'"
+bindsym --release $mod+Shift+Print exec "scrot -s ~/Pictures/Screenshot-%Y-%m-%d-%H_%M_%S.png -e 'xclip -selection c -t image/png < $f'"
+bindsym --release Print  exec "flameshot gui -p ~/Pictures/"
 
 
 #tranisiton
@@ -308,7 +308,7 @@ exec --no-startup-id nm-applet
 exec_always --no-startup-id "setxkbmap -layout us,de"
 exec_always --no-startup-id "setxkbmap -option 'grp:alt_shift_toggle'"
 exec_always setxkbmap -option compose:rctrl
-exec_always --no-startup-id "numlockx on"  
+exec_always --no-startup-id "numlockx on"
 
 bindsym $mod+c exec zenity --calendar
 
@@ -355,3 +355,6 @@ mode $displayMode {
 # remove window title bar 
 new_window 1pixel
 
+# Log downloader
+bindsym $mod+g exec /home/mirza/catkin_ws/src/helper_scripts/log_downloader.py
+#bindsym $mod+q exec zenity --calendar
