@@ -142,16 +142,16 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
-bindsym $Alt+1 workspace $ws11
-bindsym $Alt+2 workspace $ws12
-bindsym $Alt+3 workspace $ws13
-bindsym $Alt+4 workspace $ws14
-bindsym $Alt+5 workspace $ws15
-bindsym $Alt+6 workspace $ws16
-bindsym $Alt+7 workspace $ws17
-bindsym $Alt+8 workspace $ws18
-bindsym $Alt+9 workspace $ws19
-bindsym $Alt+0 workspace $ws20
+bindsym $Ctrl+1 workspace $ws11
+bindsym $Ctrl+2 workspace $ws12
+bindsym $Ctrl+3 workspace $ws13
+bindsym $Ctrl+4 workspace $ws14
+bindsym $Ctrl+5 workspace $ws15
+bindsym $Ctrl+6 workspace $ws16
+bindsym $Ctrl+7 workspace $ws17
+bindsym $Ctrl+8 workspace $ws18
+bindsym $Ctrl+9 workspace $ws19
+bindsym $Ctrl+0 workspace $ws20
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -340,22 +340,24 @@ mode $displayMode {
 					--output HDMI-2 --off \
 					--output HDMI-1 --off \
 					--output DP-1 --off \
-					--output eDP-1 --off \
-					--output DP-2-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal && \
+					--output eDP-1 --mode 1920x1080 --pos 0x0 --rotate normal \
+					--output DP-2-1 --primary --mode 1920x1080 --pos 1920x0 --rotate normal && \
 					i3-msg restart"; \
                 mode "default"
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-# remove window title bar 
+# remove window title bar
 new_window 1pixel
 
 # Log downloader
 bindsym $mod+g exec /home/mirza/catkin_ws/src/helper_scripts/log_downloader.py
+bindsym $mod+t exec /home/mirza/dotfiles/deployment/date_from_timestamp.sh
 #bindsym $mod+q exec zenity --calendar
 
 #Jira and bitbucket
 bindsym $mod+$Ctrl+k exec .config/i3/jira.sh
 bindsym $mod+$Ctrl+Shift+k exec .config/i3/bitbucket.sh
 bindsym $Ctrl+Shift+k exec .config/i3/google.sh
+#bindsym $Ctrl+Shift+g exec "rosrun robot_debugger robot_debugger clip_board"
