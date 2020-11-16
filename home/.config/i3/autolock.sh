@@ -1,6 +1,7 @@
 #!/bin/sh -e
 
 # Take a screenshot
+rm /tmp/screen_locked.png || scrot /tmp/screen_locked.png
 scrot /tmp/screen_locked.png
 
 # Pixellate it 50x

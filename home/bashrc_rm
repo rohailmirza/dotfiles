@@ -1,7 +1,7 @@
 IS_ROBOT=no
 COLOR_PROMPT=yes
 export CATKIN_WS=/home/mirza/catkin_ws
-#export CMAN_CONFIG_DIR=/opt/magazino/config
+export LIBGL_ALWAYS_SOFTWARE=1
 export FZF_ENABLED=yes
 source /home/mirza/dotfiles/bash/bashrc_magazino
 export HALCONLICENSE=1
